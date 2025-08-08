@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { loadStripe, type StripeElementsOptions } from '@stripe/stripe-js'
+import type { StripeElementsOptions } from '@stripe/stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from 'stripe-vue'
 
 const runtimeConfig = useRuntimeConfig()
@@ -10,7 +11,9 @@ const options: StripeElementsOptions = {
   mode: 'payment',
   amount: 1099,
   currency: 'usd',
-  appearance: {},
+  appearance: {
+    theme: 'night'
+  },
 }
 </script>
 
